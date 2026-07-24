@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Management Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #1e3a8a;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 12px;
+      color: #1e3a8a;
+      font-weight: bold;
+      background-color: #e0f0ff;
+      padding: 8px 16px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #b3dfff;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 50px;
+      color: #1a202c;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 25px;
+      width: 260px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: scale(1.05);
+    }
+
+    .feature-card img {
+      width: 60px;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      color: #555;
+      background-color: rgba(255,255,255,0.8);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Empowering Student Management 📚</h1>
+    <nav>
+      <a href="students.html">Manage Students</a>
+      <a href="add.html">Add Student</a>
+      <a href="login.html">Login</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>What You Can Do</h2>
+    <div class="features">
+      <div class="feature-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Student" />
+        <h3>Manage Students</h3>
+        <p>Create, update, and view student data with ease.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/484/484167.png" alt="Security" />
+        <h3>Secure System</h3>
+        <p>All data is protected with login and role-based access.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/867/867869.png" alt="Simple UI" />
+        <h3>Easy Interface</h3>
+        <p>Navigate the system with a friendly and intuitive design.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Student Management System. Designed with ❤️ for learning.
+  </footer>
+
+</body>
+</html>

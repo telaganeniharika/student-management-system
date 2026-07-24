@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0ecff, #f5faff);
+      color: #333;
+    }
+
+    header {
+      background-color: #1e90ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .container {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card i {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #1e90ff;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #1e90ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #0073cc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f3f7;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎓 Student Management Dashboard</h1>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <i data-lucide="users"></i>
+      <h2>View Students</h2>
+      <p>See all student records and manage their details.</p>
+      <a href="students.html">Go to Students</a>
+    </div>
+
+    <div class="card">
+      <i data-lucide="user-plus"></i>
+      <h2>Add Student</h2>
+      <p>Add a new student to the system with their course details.</p>
+      <a href="add.html">Add Now</a>
+    </div>
+
+
+    <div class="card">
+      <i data-lucide="log-out"></i>
+      <h2>Logout</h2>
+      <p>Exit the system and return to the login screen.</p>
+      <a href="index.html">Logout</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Student Management System | Designed with 💙 by You
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

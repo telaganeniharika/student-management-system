@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Student</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+    }
+    form {
+      width: 50%;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0b6fc2;
+    }
+    .message {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="text-align:center;">Add Student</h1>
+    <nav style="text-align:center; margin-bottom: 20px;">
+      <a href="index.html">Home</a> |
+      <a href="students.html">Student List</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="studentForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="course">Course:</label>
+      <input type="text" id="course" required />
+
+      <button type="submit">Add Student</button>
+      <p class="message" id="responseMsg"></p>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById("studentForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const student = {
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        course: document.getElementById("course").value.trim()
+      };
+
+      const responseMsg = document.getElementById("responseMsg");
+      responseMsg.textContent = "Submitting...";
+
+      fetch("http://localhost:8088/students", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(student)
+      })
+      .then(async res => {
+        const result = await res.text();
+        if (res.ok) {
+          responseMsg.style.color = "green";
+          responseMsg.textContent = "Student added successfully!";
+          setTimeout(() => {
+            window.location.href = "students.html";
+          }, 1500);
+        } else {
+          console.error("Server Error:", result);
+          responseMsg.style.color = "red";
+          responseMsg.textContent = "Failed to add student: " + result;
+        }
+      })
+      .catch(err => {
+        console.error("Network Error:", err);
+        responseMsg.style.color = "red";
+        responseMsg.textContent = "Error: Could not connect to server.";
+      });
+    });
+  </script>
+</body>
+</html>
