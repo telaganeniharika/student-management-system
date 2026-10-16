@@ -9,5 +9,4 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - run: chmod +x mvnw
-      - run: ./mvnw -Dtest=StudentServiceImplTest test
+      - run: mvn -Dtest=StudentServiceImplTest test
